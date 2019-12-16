@@ -17,17 +17,16 @@ export default class Home extends Component {
             const showtime = res.data;
             const showtimeImage = res.data.image
             this.setState({ showtime, showtimeImage });
-            console.log(this.state.showtime)
         })
     }
   render() {
     return (
         <>
         <section id="hero">
-            <img src={ImageHeader} alt="Header" />
+            <img src={ImageHeader} alt="Header" className="bg-contain md:bg-cover" />
         </section>
         <div className="container mx-auto">
-            <section id="latest" className="relative flex flex-wrap -mt-48 overflow-hidden xl:-mx-3">
+            <section id="latest" className="relative flex flex-wrap overflow-hidden md:-mt-48 xl:-mx-3">
                 {this.state.showtime.map((showtime, idx) => {
                     const imageUrl = showtime.background.url
                     const id = showtime.id
@@ -45,6 +44,7 @@ export default class Home extends Component {
                             language={showtime.language}
                             rating={3}
                             reviewCount={4}
+                            key={showtime.title}
                         />
                     )
                     })}
@@ -52,7 +52,7 @@ export default class Home extends Component {
         </div>
         <section id="promotions" className="px-12 py-6">
             <span className="text-3xl font-hairline text-white">Promoções</span>
-            <div className="flex flex-wrap overflow-hidden xl:-mx-3">
+            <div className="flex flex-col overflow-hidden md:flex-wrap md:flex-row xl:-mx-3">
                 <CardPromotions 
                     id="1"
                     imageUrl="https://scontent.fcgb2-1.fna.fbcdn.net/v/t1.0-9/79229026_2535503820109193_1443230262677733376_n.jpg?_nc_cat=101&_nc_ohc=98-Ac41nilYAQkVvDutP8eoJK-s5uS5jiPuVOectXSXji30hsI56bNbhw&_nc_ht=scontent.fcgb2-1.fna&oh=1a02633cb7b23988fd3cc6cd4fe4c6d2&oe=5E7D6CCD"

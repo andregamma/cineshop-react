@@ -5,7 +5,7 @@ export default class CardPromotions extends Component {
   render() {
     const type = this.props.type
     return (
-        <div className="w-2/6 overflow-hidden xl:my-3 xl:px-3">
+        <div className="mb-8 overflow-hidden md:w-2/6 xl:my-3 xl:px-3 md:mb-0 ">
             <Link to={`/promotions/${this.props.id}`}>
             <div className=
                 {type === 'horizontal' ? ( 

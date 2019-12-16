@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-
-import API from '../../services/api';
+import { Link } from 'react-router-dom'
 
 export default class Card extends Component {
   render() {
@@ -16,16 +15,16 @@ export default class Card extends Component {
     
     return (
         <>
-        <div className="w-1/3 overflow-hidden xl:my-3 xl:px-3">
+        <div className="overflow-hidden md:w-1/3 xl:my-3 xl:px-3">
             <div className="flex flex-col justify-center p-16">
-                <div className="pb-5/6">
+                <Link to="youtube.com" className="relative pb-5/6 hover:z-10">
                     <img className="object-cover w-full h-full rounded-lg shadow-md" src={this.props.imageUrl} alt={this.props.imageAlt} />
-                </div>
-                <div className="px-4 -mt-16 text-white">
+                </Link>
+                <div className="z-0 px-4 -mt-16 text-white">
                     <div className="p-6 rounded-lg shadow-2xl bg-blackpearl-600">
-                    <div className="flex items-baseline">
+                    <div className="flex flex-col items-baseline md:flex-row">
                         <span className="inline-block px-2 text-xs font-semibold tracking-wide text-white uppercase rounded-full bg-lipstick-500">Em cartaz</span>
-                        <div className="ml-2 text-xs font-semibold tracking-wide text-gray-700 uppercase">
+                        <div className="text-xs font-semibold tracking-wide text-gray-700 uppercase md:ml-2">
                         { this.props.startDate } até { this.props.endDate }
                         </div>
                     </div>
